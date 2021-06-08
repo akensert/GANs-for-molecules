@@ -6,8 +6,8 @@
 GAN, WGAN, VAEGAN, VAEWGAN
 
 ### Requirements:
-* RDKit
-* TensorFlow
+* RDKit ~= 2020.09.01
+* TensorFlow ~= 2.4.1
 * NumPy
 * Pandas
 
