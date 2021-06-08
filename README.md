@@ -1,4 +1,4 @@
-## Generative models for molecules (GAN, WGAN, VAEGAN and VAEWGAN)
+## Deep generative models for molecules
 
 ### Work in progess (unfinished)
 
