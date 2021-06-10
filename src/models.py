@@ -254,9 +254,12 @@ class GraphVAEGAN(GraphGAN):
         feat_real, logits_real = self.discriminator(
             graph_real, return_features=True, training=True)
 
-        rec_loss = 0.
-        for freal, fenc in zip(feat_real, feat_enc):
-            rec_loss += self.reconstruction_loss(freal, fenc)
+        feat_real = tf.concat(feat_real, axis=-1)
+        feat_enc = tf.concat(feat_enc, axis=-1)
+        rec_loss = self.reconstruction_loss(feat_real, feat_enc)
+        #rec_loss = 0.
+        #for freal, fenc in zip(feat_real, feat_enc):
+        #    rec_loss += self.reconstruction_loss(freal, fenc)
 
         gen_loss = tf.nn.sigmoid_cross_entropy_with_logits(
             tf.ones_like(logits_enc), logits_enc)
